@@ -54,6 +54,12 @@ export default {
         }
     },
     actions: {
+        registrate(context){
+            axios.post('/api/registrate',context)
+            .then((response) => {
+                console.log(response);
+            })
+        },
         login(context) {
             context.commit("login");
         },

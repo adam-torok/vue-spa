@@ -1,7 +1,9 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
-            <router-link class="navbar-brand" to="/">My Vue App</router-link>
+            <router-link class="navbar-brand" to="/">
+                <font-awesome-icon size="lg" :style="{ color: 'gray' }" icon="user-secret" />
+            </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,7 +14,7 @@
                             <router-link to="/login" class="nav-link">Login</router-link>
                         </li>
                         <li>
-                            <router-link to="/register" class="nav-link">Register</router-link>
+                            <router-link to="/registrate" class="nav-link">Register</router-link>
                         </li>
                     </template>
                     <template v-else>
@@ -23,7 +25,6 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 {{ currentUser.name }} <span class="caret"></span>
                             </a>
-
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="#!" @click.prevent="logout" class="dropdown-item">Logout</a>
                             </div>

@@ -2,9 +2,13 @@
     <div class="login row justify-content-center">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">login</div>
+                <div class="card-header">registrate</div>
                 <div class="card-body">
-                    <form @submit.prevent="authenticate">
+                    <form @submit.prevent="registrate">
+                        <div class="form-group row">
+                            <label for="name">Name:</label>
+                            <input type="text" v-model="form.name" class="form-control" placeholder="Your Name">
+                        </div>
                         <div class="form-group row">
                             <label for="email">Email:</label>
                             <input type="email" v-model="form.email" class="form-control" placeholder="Email Address">
@@ -16,9 +20,9 @@
                         <div class="form-group row">
                             <input type="submit" value="Login">
                         </div>
-                        <div class="form-group row" v-if="authError">
+                        <div class="form-group row" v-if="registrateError">
                             <p class="error">
-                                {{ authError }}
+                                {{ registrateError }}
                             </p>
                         </div>
                     </form>
@@ -29,36 +33,36 @@
 </template>
 
 <script>
-    import {login} from '../../helpers/auth';
+    import {registrate} from '../../helpers/auth';
     
     export default {
-        name: "login",
+        name: "registrate",
         data() {
             return {
                 form: {
                     email: '',
+                    name : '',
                     password: ''
                 },
                 error: null
             };
         },
         methods: {
-            authenticate() {
-                this.$store.dispatch('login');
+            registrate() {
+                this.$store.dispatch('registrate');
 
-                login(this.$data.form)
+                registrate(this.$data.form)
                     .then((res) => {
-                        this.$store.commit("loginSuccess", res);
-                        this.$router.push({path: '/'});
+                       console.log(res);
                     })
                     .catch((error) => {
-                        this.$store.commit("loginFailed", {error});
+                       console.log(error);
                     });
             }
         },
         computed: {
-            authError() {
-                return this.$store.getters.authError;
+            registrateError() {
+                return 'vegbel';
             }
         }
     }
