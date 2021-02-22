@@ -15,8 +15,10 @@ class RegistrateController extends Controller
             'password' => 'required'
         ]);
         
-        $user = User::create(request(['name', 'email', 'password']));
-        
-        return redirect()->to('/games');
+        if($user = User::create(request(['name', 'email', 'password']))){
+            return response($user, 200);
+        }else{
+            return response('Something went wrong!');
+        }
     }
 }

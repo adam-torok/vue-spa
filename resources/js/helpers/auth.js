@@ -13,17 +13,6 @@ export function login(credentials) {
     })
 }
 
-export function registrate(credentials) {
-    return new Promise((res, rej) => {
-        axios.post('/api/registrate', credentials)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((err) =>{
-                rej("Hibak leptek fel");
-            })
-    })
-}
 
 export function getLocalUser() {
     const userStr = localStorage.getItem("user");

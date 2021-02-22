@@ -6,20 +6,28 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import storeData from './store'
-import {
-    routes
-} from './routes';
+import { alert } from './store/alert.module';
+
+import Notifications from "vt-notifications";
+import { routes } from './routes';
 import MainApp from './components/MainApp'
 import {initialize} from './helpers/general'
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
+
+Vue.use(Notifications);
+
 library.add(faUserSecret)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-
-const store = new Vuex.Store(storeData);
+const store = new Vuex.Store({
+    modules: {
+        storeData,
+        alert,
+    }
+});
 
 const router = new VueRouter({
     routes,
