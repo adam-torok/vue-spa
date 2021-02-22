@@ -7,7 +7,6 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import storeData from './store'
 import { alert } from './store/alert.module';
-
 import Notifications from "vt-notifications";
 import { routes } from './routes';
 import MainApp from './components/MainApp'

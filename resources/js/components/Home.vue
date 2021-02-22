@@ -1,7 +1,6 @@
 <template>
    <div class="h-100 align-center flex">
-      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_dy2leguq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-   </div>
+<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_3c6fdhn7.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"    autoplay></lottie-player>   </div>
 </template>
 
 <script>

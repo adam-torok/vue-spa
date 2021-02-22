@@ -1,10 +1,10 @@
 <template>
     <div id="main">
-        <Header/>
-    <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
-      <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
-      <span class="inline-flex px-2">{{alert.message}}</span>
-    </div>        
+    <Header/>
+        <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
+            <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
+            <span class="inline-flex px-2">{{alert.message}}</span>
+        </div>        
         <transition name='fade' mode="out-in" >
             <router-view></router-view>
         </transition>
@@ -21,7 +21,7 @@ import Loader from './Loader'
             Header,
             Loader
         },
-         computed: {
+        computed: {
         ...mapState({
             alert: state => state.alert
         })
@@ -32,7 +32,7 @@ import Loader from './Loader'
         })
     },
     watch: {
-        $route (to, from){
+        $routes(to, from){
             this.clearAlert();
         }
     } 

@@ -35,7 +35,7 @@ export default {};
   bottom: 0;
   right: 0;
   align-items: center;
-   height: 100%!important;
-   margin:0;
+  height: 100%!important;
+  margin:0;
 }
 </style>
