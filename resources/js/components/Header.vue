@@ -23,10 +23,10 @@
                     <router-link to="/registrate" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Register</router-link>
                 </template>
                 <template v-else>
-                    <router-link to="/customers" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Adverts</router-link>
+                    <router-link to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Adverts</router-link>
                     <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
                     <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
-                        <img class="rounded-full" alt="A" src="https://randomuser.me/api/portraits/women/68.jpg"> 
+                        <img class="rounded-full w-full h-full object-cover" alt="Profile picture" src="https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599"> 
                     </div>
                     {{currentUser.name}}</router-link> 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">

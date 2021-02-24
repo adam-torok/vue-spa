@@ -4,7 +4,7 @@
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut">
     <div class="loading absolute z-50 h-screen w-full flex flex-col items-center justify-center">
-    
+      <i class="fas fa-gamepad fa-spin fa-3x"></i>
     </div>
   </transition>
 </template>
@@ -19,7 +19,7 @@ export default {};
   z-index: 999;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
+  background-color: #ffffffd3;
   background-attachment: fixed;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -37,5 +37,6 @@ export default {};
   align-items: center;
   height: 100%!important;
   margin:0;
+  transition: none!important;
 }
 </style>

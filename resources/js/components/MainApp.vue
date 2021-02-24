@@ -14,48 +14,53 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import Header from './Header'
-import Loader from './Loader'
 
     export default {
+        data(){
+            return {
+
+            }
+        },
+        mounted(){
+
+        },
         components:{
             Header,
-            Loader
         },
         computed: {
-        ...mapState({
-            alert: state => state.alert
-        })
-    },
-    methods: {
-        ...mapActions({
-            clearAlert: 'alert/clear' 
-        })
-    },
-    watch: {
-        $routes(to, from){
-            this.clearAlert();
-        }
-    } 
-
-    }
+            ...mapState({
+                alert: state => state.alert
+            })
+        },
+        methods: {
+            ...mapActions({
+                clearAlert: 'alert/clear' 
+            })
+        },
+        watch: {
+            $routes(to, from){
+                this.clearAlert();
+            }
+        } 
+}
 </script>
 
 <style>
- @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css';
- body{
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css';
+body{
     -webkit-user-select:none;-moz-user-select:-moz-none;
     -ms-user-select:none;user-select:none
 }
- .fade-enter, .fade-leave-to{
-     opacity: 0;
-     transform: translateX(-2em);
- }
- .fade-enter-active, .fade-leave-active{
-     transition: all 0.3s ease;
- }
+.fade-enter, .fade-leave-to{
+    opacity: 0;
+    transform: translateX(-2em);
+}
+.fade-enter-active, .fade-leave-active{
+    transition: all 0.3s ease;
+}
 input,
 textarea {
-  font-size: 16px;
+    font-size: 16px;
 }
 #main{
     background: rgb(215, 215, 215);
