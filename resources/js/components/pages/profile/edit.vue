@@ -37,23 +37,23 @@
             <div class="mt-3">
 
                 <div class="text-gray-600 flex">
-                    <label for="bio">Bio:</label>
-                    <input id='bio' type="text" value="Software Engineer / Designer / Entrepreneur Selling things, just for fun." class="text-gray leading-tight mb-2">
+                    <label for="bio" class="font-bold mr-2"><i class="fas fa-feather-alt"></i> Bio:</label>
+                    <input id='bio' type="text" placeholder="Your public email" value="Software Engineer / Designer, just for fun." class="text-gray leading-tight">
                 </div>
 
                 <div class="text-gray-600 flex">
-                    <label for="public_email">Public email:</label>
-                    <input id='public_email' type="email" value="woltery99@outlook.hu" class="text-gray leading-tight mb-2">      
+                    <label for="public_email" class="font-bold mr-2"><i class="fas fa-at"></i> Public email:</label>
+                    <input id='public_email' placeholder="Your public email" type="email" value="woltery99@outlook.hu" class="text-gray leading-tight">      
                 </div>
 
                 <div class="text-gray-600 flex">
-                    <label for="city">City:</label>
-                    <input id='city' placeholder="Your city" type="text" value="" class="text-gray leading-tight mb-2">      
+                    <label for="city" class="font-bold mr-2"><i class="fas fa-city"></i> City:</label>
+                    <input id='city' placeholder="Your city" type="text" value="" class="text-gray leading-tight">      
                 </div>
 
                 <div class="text-gray-600 flex">
-                    <label for="web">Web:</label>
-                    <input id='web' placeholder="Your webpage" type="text" value="" class="text-gray leading-tight mb-2">      
+                    <label for="web" class="font-bold mr-2"><i class="fas fa-columns"></i> Web:</label>
+                    <input id='web' placeholder="Your webpage" type="text" value="" class="text-gray leading-tight">      
                 </div>  
             </div>
         </div>

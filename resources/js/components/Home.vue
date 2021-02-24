@@ -24,13 +24,6 @@ export default {
                target: '[data-v-step="2"]',
                content: 'Browse all the avaiable adverts!'
             },
-            {
-               target: '[data-v-step="3"]',
-               content: 'Check your profile, edit it!',
-               params: {
-                  placement: 'top'
-               }
-            }
          ]
       }
    },

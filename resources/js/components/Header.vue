@@ -1,6 +1,6 @@
 <template>
 
-<nav class=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
+<nav class="bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
     <div class="inline-flex" data-v-step="1" id='logo'>
         <router-link class="_o6689fn" to="/"><div class="hidden md:block">
                 <svg width="102" height="32" fill="currentcolor" style="display: block">
@@ -24,24 +24,32 @@
                 </template>
                 <template v-else>
                     <router-link data-v-step="2" to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Adverts</router-link>
-                    <router-link data-v-step="3" to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                    <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
-                        <img class="rounded-full w-full h-full object-cover" alt="Profile picture" src="https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599"> 
-                    </div>
-                    {{currentUser.username}}</router-link> 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a href="#!" @click.prevent="logout" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-sign-out-alt"></i></a>
-                    </div>
+                    <span class="py-2 px-3 hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
+                    <transition name="slide">
+                        <div v-show="menuOpen" class="dropdown-menu z-30" aria-labelledby="navbarDropdown">
+                            <div class="dropdpown__inner">
+                            <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
+                                    <img class="rounded-full w-full h-full object-cover" alt="Profile picture" src="https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599"> 
+                                </div>
+                                {{currentUser.username}}
+                            </router-link> 
+                            <a @click="menuOpen = false"  href="#!" @click.prevent="logout" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                            </div>
+                        </div>
+                    </transition>
                 </template>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- end login -->
 </nav>
 
 </template>
 
 <script>
+
     export default {
         name: 'app-header',
         methods: {
@@ -50,10 +58,57 @@
                 this.$router.push("/login");
             }
         },
+        data(){
+            return{
+                menuOpen :false,
+            }
+        },
         computed: {
             currentUser() {
                 return this.$store.getters.currentUser
             }
-        }
+        },
+        created: function() {
+            let self = this;
+            window.addEventListener('click', function(e){
+            if (!self.$el.contains(e.target)){
+                self.menuOpen = false
+            } 
+    })
+}
     }
 </script>
+
+<style scoped>
+    .dropdown-menu{
+        background: white;
+        position: absolute;
+        width: 200px;
+        right: -2rem;
+        top: 3rem;
+        justify-content: center;
+        align-items: center;
+        transform-origin: top;
+        transition: all .2s ease-in-out;
+    }
+    .dropdpown__inner{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        transition: all .2s ease-in-out;
+        justify-content: center;
+        flex-direction: column;
+        padding:10px;
+    }
+    .slide-enter, .slide-leave-to{
+        transform: scaleY(0);
+    }
+    .rotated{
+        transform: rotate(180deg)!important;
+        transition: all .2s ease-in-out;
+    }
+    .fa-chevron-circle-down{
+        transform: rotate(0deg);
+        transition: all .2s ease-in-out;
+    }
+</style>

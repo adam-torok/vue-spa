@@ -30,6 +30,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.34",
         "@fortawesome/free-solid-svg-icons": "^5.15.2",
         "@fortawesome/vue-fontawesome": "^2.0.2",
+        "@innologica/vue-dropdown-menu": "^0.1.4",
         "validate.js": "^0.13.1",
         "vt-notifications": "^0.3.1",
         "vue-router": "^3.5.1",
