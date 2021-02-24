@@ -1,13 +1,15 @@
 <template>
-    <div id="main">
+    <div id="main" class=" border-t-4 border-gray-800">
     <Header/>
         <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
             <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
             <span class="inline-flex px-2">{{alert.message}}</span>
         </div>        
+    
         <transition name='fade' mode="out-in" >
             <router-view></router-view>
         </transition>
+
     </div>
 </template>
 
@@ -18,12 +20,12 @@ import Header from './Header'
     export default {
         data(){
             return {
-
+           
             }
         },
         mounted(){
 
-        },
+},
         components:{
             Header,
         },
@@ -73,5 +75,28 @@ textarea {
     align-items: center;
     width: max-content;
     margin-top: 15px;
+}
+.v-step {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    max-width: 24rem !important;
+    background-color:rgba(107, 114, 128, var(--tw-bg-opacity));
+    border-radius: 0.5rem !important;
+    color: #faf5ff !important;
+    font-size: 1.125rem !important;
+    -webkit-filter: drop-shadow(0px 20px 25px rgba(0,0,0,0.1)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.04)) !important;
+    filter: drop-shadow(0px 20px 25px rgba(0,0,0,0.1)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.04)) !important;
+}
+.v-step__arrow {
+    border-color: rgba(107, 114, 128, var(--tw-bg-opacity));
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-top-color: transparent !important;
+}
+.v-step__button{
+    border-radius: 0.5rem!important;
+    background-color: rgba(107, 114, 128, var(--tw-bg-opacity))!important;
+    background: rgba(107, 114, 128, var(--tw-bg-opacity))!important;
+    color: rgba(255, 255, 255, var(--tw-text-opacity))!important;
 }
 </style>

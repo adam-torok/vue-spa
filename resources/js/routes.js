@@ -1,5 +1,6 @@
 import Home from './components/Home'
 import Profile from './components/Profile'
+import ProfileEdit from './components/pages/profile/edit'
 import Adverts from './components/Adverts'
 import Login from './components/auth/Login'
 import Registrate from './components/auth/Registrate'
@@ -23,6 +24,13 @@ export const routes = [
    {
       path : '/profile',
       component : Profile,
+      meta : {
+         requiresAuth : true,
+      }
+   },
+   {
+      path : '/profile/edit',
+      component : ProfileEdit,
       meta : {
          requiresAuth : true,
       }

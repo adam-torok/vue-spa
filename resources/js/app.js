@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('vue-tour/dist/vue-tour.css')
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -11,10 +12,11 @@ import Notifications from "vt-notifications";
 import { routes } from './routes';
 import MainApp from './components/MainApp'
 import {initialize} from './helpers/general'
+import VueTour from 'vue-tour'
+
 Vue.use(VueRouter);
 Vue.use(Vuex);
-
-
+Vue.use(VueTour)
 Vue.use(Notifications);
 
 library.add(faUserSecret)
