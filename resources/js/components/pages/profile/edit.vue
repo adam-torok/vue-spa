@@ -11,7 +11,7 @@
             <div class="flex flex-1 items-center justify-center	">
                 <div style="margin-left: 6rem;margin-top: -6rem;">
                     <div style="height:9rem; width:9rem;" class="md rounded-full relative avatar">
-                        <img style="height:9rem; width:9rem;" class="md rounded-full relative bg-cover object-cover border-4 border-gray-900" src="https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599" alt="Profile picture">
+                        <img style="height:9rem; width:9rem;" class="md rounded-full relative bg-cover object-cover border-4 border-gray-900" :src="'../img/'+currentUser.profile_picture+'.jpg'" alt="Profile picture">
                         <div class="absolute"></div>
                     </div>
                 </div>

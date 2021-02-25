@@ -24,19 +24,28 @@
                 </template>
                 <template v-else>
                     <router-link data-v-step="2" to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Adverts</router-link>
-                    <span class="py-2 px-3 hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
+                    <span class="py-2 px-3 cursor-pointer hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
                     <transition name="slide">
                         <div v-show="menuOpen" class="dropdown-menu z-30" aria-labelledby="navbarDropdown">
                             <div class="dropdpown__inner">
                             <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
                                 <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
-                                    <img class="rounded-full w-full h-full object-cover" alt="Profile picture" src="https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599"> 
+                                    <img class="rounded-full w-full h-full object-cover" alt="Profile picture" :src="'../img/'+currentUser.profile_picture+'.jpg'"> 
                                 </div>
                                 {{currentUser.username}}
                             </router-link> 
                             <a @click="menuOpen = false"  href="#!" @click.prevent="logout" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
+                             <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Settings
+                            </router-link> 
+                            <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Reports
+                            </router-link> 
+                            <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Privacy Policy
+                            </router-link> 
                             </div>
                         </div>
                     </transition>

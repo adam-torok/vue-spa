@@ -12150,6 +12150,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'app-header',
   methods: {
@@ -13089,7 +13098,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bottom-nav{\r\n    transition: none!important;\n}\n.con{\r\n    transition: none!important;\r\n    margin-bottom: 45px;\n}\n.hirdetesek{\r\n    display: grid;\r\n    grid-template-columns: 1fr;\n}\n@media (min-width: 768px){\n.hirdetesek{\r\n        grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1024px){\n.hirdetesek{\r\n        grid-template-columns: 1fr 1fr 1fr;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bottom-nav{\n    transition: none!important;\n}\n.con{\n    transition: none!important;\n    margin-bottom: 45px;\n}\n.hirdetesek{\n    display: grid;\n    grid-template-columns: 1fr;\n}\n@media (min-width: 768px){\n.hirdetesek{\n        grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1024px){\n.hirdetesek{\n        grid-template-columns: 1fr 1fr 1fr;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13161,7 +13170,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.loading {\r\n  position: fixed;\r\n  z-index: 999;\r\n  font-family: Avenir, Helvetica, Arial, sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  background-color: #ffffffd3;\r\n  background-attachment: fixed;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #2c3e50;\r\n  overflow: show;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  display: flex;\r\n  margin: auto;\r\n  top: 0;\r\n  left: 0;\r\n  justify-content: center;\r\n  bottom: 0;\r\n  right: 0;\r\n  align-items: center;\r\n  height: 100%!important;\r\n  margin:0;\r\n  transition: none!important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.loading {\n  position: fixed;\n  z-index: 999;\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  background-color: #ffffffd3;\n  background-attachment: fixed;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n  overflow: show;\n  flex-direction: column;\n  width: 100%;\n  display: flex;\n  margin: auto;\n  top: 0;\n  left: 0;\n  justify-content: center;\n  bottom: 0;\n  right: 0;\n  align-items: center;\n  height: 100%!important;\n  margin:0;\n  transition: none!important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13186,7 +13195,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\r\n    -webkit-user-select:none;-moz-user-select:-moz-none;\r\n    -ms-user-select:none;user-select:none\n}\n.fade-enter, .fade-leave-to{\r\n    opacity: 0;\r\n    transform: translateX(-2em);\n}\n.fade-enter-active, .fade-leave-active{\r\n    transition: all 0.3s ease;\n}\ninput,\r\ntextarea {\r\n    font-size: 16px;\n}\n#main{\r\n    background: rgb(215, 215, 215);\r\n    min-height: 100vh;\n}\n.notifier{\r\n    margin: auto;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: -webkit-max-content;\r\n    width: -moz-max-content;\r\n    width: max-content;\r\n    margin-top: 15px;\n}\n.v-step {\r\n    margin-left: 0.5rem !important;\r\n    margin-right: 0.5rem !important;\r\n    max-width: 24rem !important;\r\n    background-color:rgba(107, 114, 128, var(--tw-bg-opacity));\r\n    border-radius: 0.5rem !important;\r\n    color: #faf5ff !important;\r\n    font-size: 1.125rem !important;\r\n    filter: drop-shadow(0px 20px 25px rgba(0,0,0,0.1)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.04)) !important;\n}\n.v-step__arrow {\r\n    border-color: rgba(107, 114, 128, var(--tw-bg-opacity));\r\n    border-left-color: transparent !important;\r\n    border-right-color: transparent !important;\r\n    border-top-color: transparent !important;\n}\n.v-step__button{\r\n    border-radius: 0.5rem!important;\r\n    background-color: rgba(107, 114, 128, var(--tw-bg-opacity))!important;\r\n    background: rgba(107, 114, 128, var(--tw-bg-opacity))!important;\r\n    color: rgba(255, 255, 255, var(--tw-text-opacity))!important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    -webkit-user-select:none;-moz-user-select:-moz-none;\n    -ms-user-select:none;user-select:none\n}\n.fade-enter, .fade-leave-to{\n    opacity: 0;\n    transform: translateX(-2em);\n}\n.fade-enter-active, .fade-leave-active{\n    transition: all 0.3s ease;\n}\ninput,\ntextarea {\n    font-size: 16px;\n}\n#main{\n    background: rgb(215, 215, 215);\n    min-height: 100vh;\n}\n.notifier{\n    margin: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: -webkit-max-content;\n    width: -moz-max-content;\n    width: max-content;\n    margin-top: 15px;\n}\n.v-step {\n    margin-left: 0.5rem !important;\n    margin-right: 0.5rem !important;\n    max-width: 24rem !important;\n    background-color:rgba(107, 114, 128, var(--tw-bg-opacity));\n    border-radius: 0.5rem !important;\n    color: #faf5ff !important;\n    font-size: 1.125rem !important;\n    filter: drop-shadow(0px 20px 25px rgba(0,0,0,0.1)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.04)) !important;\n}\n.v-step__arrow {\n    border-color: rgba(107, 114, 128, var(--tw-bg-opacity));\n    border-left-color: transparent !important;\n    border-right-color: transparent !important;\n    border-top-color: transparent !important;\n}\n.v-step__button{\n    border-radius: 0.5rem!important;\n    background-color: rgba(107, 114, 128, var(--tw-bg-opacity))!important;\n    background: rgba(107, 114, 128, var(--tw-bg-opacity))!important;\n    color: rgba(255, 255, 255, var(--tw-text-opacity))!important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13210,7 +13219,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.error[data-v-4221c3ad] {\r\n    text-align: center;\r\n    color: red;\n}\n.alerter[data-v-4221c3ad]{\r\n    transition: all 0.3s;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.error[data-v-4221c3ad] {\n    text-align: center;\n    color: red;\n}\n.alerter[data-v-4221c3ad]{\n    transition: all 0.3s;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13234,7 +13243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.error[data-v-7aadde42] {\r\n    text-align: center;\r\n    color: red;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.error[data-v-7aadde42] {\n    text-align: center;\n    color: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -43750,7 +43759,8 @@ var render = function() {
                     _c(
                       "span",
                       {
-                        staticClass: "py-2 px-3 hover:bg-gray-200 rounded-full",
+                        staticClass:
+                          "py-2 px-3 cursor-pointer hover:bg-gray-200 rounded-full",
                         on: {
                           click: function($event) {
                             _vm.menuOpen = !_vm.menuOpen
@@ -43808,15 +43818,17 @@ var render = function() {
                                         attrs: {
                                           alt: "Profile picture",
                                           src:
-                                            "https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599"
+                                            "../img/" +
+                                            _vm.currentUser.profile_picture +
+                                            ".jpg"
                                         }
                                       })
                                     ]
                                   ),
                                   _vm._v(
-                                    "\r\n                                " +
+                                    "\n                                " +
                                       _vm._s(_vm.currentUser.username) +
-                                      "\r\n                            "
+                                      "\n                            "
                                   )
                                 ]
                               ),
@@ -43844,7 +43856,49 @@ var render = function() {
                                     staticClass: "fas fa-sign-out-alt"
                                   }),
                                   _vm._v(
-                                    " Logout\r\n                            "
+                                    " Logout\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass:
+                                    "inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative",
+                                  attrs: { to: "/profile" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Settings\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass:
+                                    "inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative",
+                                  attrs: { to: "/profile" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Reports\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass:
+                                    "inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative",
+                                  attrs: { to: "/profile" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Privacy Policy\n                            "
                                   )
                                 ]
                               )
@@ -44106,9 +44160,32 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "p-4" }, [
         _c("div", { staticClass: "relative flex w-full" }, [
-          _vm._m(1),
+          _c("div", { staticClass: "flex flex-1" }, [
+            _c("div", { staticStyle: { "margin-top": "-6rem" } }, [
+              _c(
+                "div",
+                {
+                  staticClass: "md rounded-full relative avatar",
+                  staticStyle: { height: "7rem", width: "7rem" }
+                },
+                [
+                  _c("img", {
+                    staticClass:
+                      "md rounded-full relative bg-cover object-cover border-4 border-gray-900",
+                    staticStyle: { height: "7rem", width: "7rem" },
+                    attrs: {
+                      src: "img/" + _vm.currentUser.profile_picture + ".jpg",
+                      alt: "Profile picture"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "absolute" })
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
-          _vm._m(2),
+          _vm._m(1),
           _vm._v(" "),
           _c(
             "div",
@@ -44152,7 +44229,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mt-3" }, [
-              _vm._m(3),
+              _vm._m(2),
               _vm._v(" "),
               _c("div", { staticClass: "text-gray-600 flex" }, [
                 _c("span", { staticClass: "flex items-center mr-2" }, [
@@ -44248,13 +44325,13 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("span", { staticClass: "leading-5 ml-1" }, [
-                    _vm._v("Joined December, 2019")
+                    _vm._v("Joined " + _vm._s(_vm.currentUser.created_at))
                   ])
                 ])
               ])
             ]),
             _vm._v(" "),
-            _vm._m(4)
+            _vm._m(3)
           ]
         )
       ]),
@@ -44289,36 +44366,6 @@ var staticRenderFns = [
         })
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex flex-1" }, [
-      _c("div", { staticStyle: { "margin-top": "-6rem" } }, [
-        _c(
-          "div",
-          {
-            staticClass: "md rounded-full relative avatar",
-            staticStyle: { height: "7rem", width: "7rem" }
-          },
-          [
-            _c("img", {
-              staticClass:
-                "md rounded-full relative bg-cover object-cover border-4 border-gray-900",
-              staticStyle: { height: "7rem", width: "7rem" },
-              attrs: {
-                src:
-                  "https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599",
-                alt: "Profile picture"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "absolute" })
-          ]
-        )
-      ])
-    ])
   },
   function() {
     var _vm = this
@@ -44501,7 +44548,7 @@ var render = function() {
                     [
                       _c("span", { staticClass: "inline-block mr-2" }, [
                         _vm._v(
-                          _vm._s(_vm.loginText) + "\r\n                    "
+                          _vm._s(_vm.loginText) + "\n                    "
                         ),
                         _c("i", {
                           directives: [
@@ -44900,7 +44947,47 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "p-4" }, [
-        _vm._m(1),
+        _c("div", { staticClass: "relative flex w-full" }, [
+          _c(
+            "div",
+            { staticClass: "flex flex-1 items-center justify-center\t" },
+            [
+              _c(
+                "div",
+                {
+                  staticStyle: { "margin-left": "6rem", "margin-top": "-6rem" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "md rounded-full relative avatar",
+                      staticStyle: { height: "9rem", width: "9rem" }
+                    },
+                    [
+                      _c("img", {
+                        staticClass:
+                          "md rounded-full relative bg-cover object-cover border-4 border-gray-900",
+                        staticStyle: { height: "9rem", width: "9rem" },
+                        attrs: {
+                          src:
+                            "../img/" +
+                            _vm.currentUser.profile_picture +
+                            ".jpg",
+                          alt: "Profile picture"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "absolute" })
+                    ]
+                  )
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(1)
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -44960,52 +45047,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "relative flex w-full" }, [
-      _c("div", { staticClass: "flex flex-1 items-center justify-center\t" }, [
-        _c(
-          "div",
-          { staticStyle: { "margin-left": "6rem", "margin-top": "-6rem" } },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "md rounded-full relative avatar",
-                staticStyle: { height: "9rem", width: "9rem" }
-              },
-              [
-                _c("img", {
-                  staticClass:
-                    "md rounded-full relative bg-cover object-cover border-4 border-gray-900",
-                  staticStyle: { height: "9rem", width: "9rem" },
-                  attrs: {
-                    src:
-                      "https://scontent.fbud4-1.fna.fbcdn.net/v/t1.0-9/27655444_1553266691394108_1864222071249340573_n.jpg?_nc_cat=107&ccb=3&_nc_sid=09cbfe&_nc_ohc=iHcD00nUjMAAX9LQY-2&_nc_ht=scontent.fbud4-1.fna&oh=7d909a6cb892e02224cea0f545c65ce0&oe=605CE599",
-                    alt: "Profile picture"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "absolute" })
-              ]
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex flex-col text-right" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full p-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
-          },
-          [
-            _c("span", { staticClass: "inline-block" }, [
-              _vm._v("Save \n                        "),
-              _c("i", { staticClass: "fas fa-save" })
-            ])
-          ]
-        )
-      ])
+    return _c("div", { staticClass: "flex flex-col text-right" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full p-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
+        },
+        [
+          _c("span", { staticClass: "inline-block" }, [
+            _vm._v("Save \n                        "),
+            _c("i", { staticClass: "fas fa-save" })
+          ])
+        ]
+      )
     ])
   },
   function() {
