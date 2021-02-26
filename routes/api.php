@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrateController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +12,4 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::post('me', [AuthController::class, 'me']);
 });
+Route::post('profile/update',[ProfileController::class, 'update']);

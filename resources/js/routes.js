@@ -1,11 +1,10 @@
-import Home from './components/Home'
-import Profile from './components/Profile'
+import Home from './components/pages/home/Home'
+import Profile from './components/pages/profile/index'
 import ProfileEdit from './components/pages/profile/edit'
 import Settings from './components/pages/settings/Settings'
 import Report from './components/pages/report/report'
 import PP from './components/pages/privacy/pp'
-
-import Adverts from './components/Adverts'
+import Adverts from './components/pages/adverts/Adverts'
 import Login from './components/auth/Login'
 import Registrate from './components/auth/Registrate'
 
@@ -26,7 +25,7 @@ export const routes = [
       component : Login,
    },
    {
-      path : '/profile',
+      path : '/profile/',
       component : Profile,
       meta : {
          requiresAuth : true,

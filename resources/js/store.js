@@ -28,6 +28,13 @@ export default {
         }
     },
     mutations: {
+        setInformations(state, payload){
+            const { bio, public_email, city, web } = payload;
+            state.currentUser.bio = bio;
+            state.currentUser.public_email = public_email;
+            state.currentUser.city = city;
+            state.currentUser.web = web;
+        },
         login(state) {
             state.loading = true;
             state.auth_error = null;

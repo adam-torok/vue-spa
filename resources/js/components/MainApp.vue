@@ -1,11 +1,14 @@
 <template>
     <div id="main" class=" border-t-4 border-gray-800">
     <Header/>
-        <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
-            <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
-            <span class="inline-flex px-2">{{alert.message}}</span>
-        </div>        
     
+        <transition name='fade' mode="out-in" >
+            <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
+                <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
+                <span class="inline-flex px-2">{{alert.message}}</span>
+            </div>        
+        </transition>
+
         <transition name='fade' mode="out-in" >
             <router-view></router-view>
         </transition>
@@ -18,14 +21,6 @@ import { mapState, mapActions } from 'vuex'
 import Header from './Header'
 
     export default {
-        data(){
-            return {
-           
-            }
-        },
-        mounted(){
-
-},
         components:{
             Header,
         },
@@ -39,12 +34,12 @@ import Header from './Header'
                 clearAlert: 'alert/clear' 
             })
         },
-        watch: {
-            $routes(to, from){
-                this.clearAlert();
-            }
-        } 
-}
+        updated() {
+                setTimeout(() => {
+                    this.clearAlert();
+                }, 5000);
+            } 
+    }   
 </script>
 
 <style>
@@ -73,8 +68,14 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
-    margin-top: 15px;
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 90px;
+    margin-left: -125px;
 }
 .v-step {
     margin-left: 0.5rem !important;

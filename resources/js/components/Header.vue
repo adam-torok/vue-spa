@@ -1,6 +1,6 @@
 <template>
 
-<nav class="bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
+<nav ref="dropdownMenu" class="naver bg-white w-full flex relative justify-between items-center px-2 md:px-2 lg:px4 h-20">
     <div class="inline-flex" data-v-step="1" id='logo'>
         <router-link class="_o6689fn" to="/"><div class="hidden md:block">
                 <svg width="102" height="32" fill="currentcolor" style="display: block">
@@ -17,7 +17,7 @@
 
     <div class="flex-initial">
         <div class="flex justify-end items-center relative">
-            <div class="flex mr-4 items-center">
+            <div class="flex md:mr-2 items-center">
                 <template v-if="!currentUser">
                     <router-link to="/login" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-sign-in-alt"></i></router-link>
                     <router-link to="/registrate" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Register</router-link>
@@ -29,7 +29,7 @@
                     <span class="py-2 px-3 cursor-pointer hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
                     <transition name="slide">
                         <div v-show="menuOpen" class="dropdown-menu z-30" aria-labelledby="navbarDropdown">
-                            <div class="dropdpown__inner">
+                            <div @click="menuOpen = !menuOpen" class="dropdpown__inner">
                             <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
                                 <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
                                     <img class="rounded-full w-full h-full object-cover" alt="Profile picture" :src="'../img/'+currentUser.profile_picture+'.jpg'"> 
@@ -37,16 +37,16 @@
                                 {{currentUser.username}}
                             </router-link> 
                             <router-link to="/settings" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Settings
+                                <i class="fas fa-cog mr-2"></i> Settings
                             </router-link> 
                             <router-link to="/report" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Reports
+                                <i class="fas fa-flag mr-2"></i>Reports
                             </router-link> 
                             <router-link to="/privacy-policy" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Privacy Policy
+                                <i class="fas fa-user-secret mr-2"></i> Privacy Policy
                             </router-link>
                             <a @click="menuOpen = false"  href="#!" @click.prevent="logout" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
                             </a>
                             </div>
                         </div>
@@ -67,6 +67,14 @@
             logout() {
                 this.$store.commit('logout');
                 this.$router.push("/login");
+            },
+             documentClick(e){
+                let el = this.$refs.dropdownMenu
+                let target = e.target
+                console.log(e.target.tagName);
+                if ((el !== target) && !el.contains(target)  || target.tagName == 'NAV' || target.tagName == 'A') {
+                    this.menuOpen=false
+                }
             }
         },
         data(){
@@ -80,14 +88,12 @@
             }
         },
         created: function() {
-            let self = this;
-            window.addEventListener('click', function(e){
-            if (!self.$el.contains(e.target)){
-                self.menuOpen = false
-            } 
-    })
+            document.addEventListener('click', this.documentClick)
+        },
+        destroyed(){
+            document.removeEventListener('click', this.documentClick)
+        }
 }
-    }
 </script>
 
 <style scoped>
@@ -95,7 +101,7 @@
         background: white;
         position: absolute;
         width: 200px;
-        right: -2rem;
+        right: 0;
         top: 3rem;
         justify-content: center;
         align-items: center;

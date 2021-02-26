@@ -1,5 +1,5 @@
 <template>
-<div class="p-4  pt-0 flex items-center justify-center bg-cover bg-center">
+<div class="p-4 mt-4 pt-0 flex items-center justify-center bg-cover bg-center">
     <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
     <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
         <div class="px-5 py-7">

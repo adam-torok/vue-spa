@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+<div class="bg-white">
 <!-- User card-->
 <div>
     <div class="w-full bg-cover bg-no-repeat bg-center" style="height: 200px; background-image: url(https://c4.wallpaperflare.com/wallpaper/300/544/973/discord-wallpaper-preview.jpg);">
@@ -43,7 +43,6 @@
                         id='bio'
                         type="text"
                         placeholder="Your public email"
-                        value="Software Engineer / Designer, just for fun."
                         class="text-gray leading-tight">
                 </div>
 
@@ -89,22 +88,47 @@ export default {
     data(){
         return{
             form : {
+                id : '',
                 bio : '',
                 public_email : '',
                 city : '',
-                web : ''
+                web : '',
+                twitter : '',
+                skype : ''
             }
         }
     },
     methods:{
         saveDetails(){
-            alert('saving details ... 💫💫');
-        }
-    },
+            axios.post('/api/profile/update', this.form)
+                .then(() => {
+                    this.$store.commit('setInformations', {
+                        bio : this.form.bio,
+                        public_email : this.form.public_email,
+                        city : this.form.city,
+                        webpage : this.form.web
+                    })
+                    this.$store.dispatch('alert/success', 'Sucessful update');
+                    this.$router.push({path: '/profile'});
+                })
+                .catch((err) =>{
+                    setTimeout(() => {
+                        this.$store.dispatch('alert/success', err);
+                    })
+                })
+            }
+        },
     computed: {
         currentUser() {
             return this.$store.getters.currentUser;
         },
+    },
+    mounted(){
+        this.form.id = this.currentUser.id;
+        this.form.web = this.currentUser.webpage;
+        this.form.bio = this.currentUser.bio;
+        this.form.city = this.currentUser.city;
+        this.form.public_email = this.currentUser.public_email;
     }
 }
 </script>
