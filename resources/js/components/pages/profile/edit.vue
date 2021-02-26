@@ -18,8 +18,9 @@
             </div>
             <!-- Follow Button -->
             <div class="flex flex-col text-right">
-                <button class="transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full p-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                    <span class="inline-block">Save 
+                <button @click="saveDetails" class="transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full p-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                    <span class="inline-block"> 
+                        Save
                         <i class="fas fa-save"></i>
                     </span>
                 </button>
@@ -38,36 +39,72 @@
 
                 <div class="text-gray-600 flex">
                     <label for="bio" class="font-bold mr-2"><i class="fas fa-feather-alt"></i> Bio:</label>
-                    <input id='bio' type="text" placeholder="Your public email" value="Software Engineer / Designer, just for fun." class="text-gray leading-tight">
+                    <input v-model="form.bio"
+                        id='bio'
+                        type="text"
+                        placeholder="Your public email"
+                        value="Software Engineer / Designer, just for fun."
+                        class="text-gray leading-tight">
                 </div>
 
                 <div class="text-gray-600 flex">
                     <label for="public_email" class="font-bold mr-2"><i class="fas fa-at"></i> Public email:</label>
-                    <input id='public_email' placeholder="Your public email" type="email" value="woltery99@outlook.hu" class="text-gray leading-tight">      
+                    <input v-model="form.public_email"
+                        id='public_email'
+                        placeholder="Your public email"
+                        type="email"
+                        value="woltery99@outlook.hu"
+                        class="text-gray leading-tight">      
                 </div>
 
                 <div class="text-gray-600 flex">
                     <label for="city" class="font-bold mr-2"><i class="fas fa-city"></i> City:</label>
-                    <input id='city' placeholder="Your city" type="text" value="" class="text-gray leading-tight">      
+                    <input v-model="form.city" 
+                        id='city' 
+                        placeholder="Your city" 
+                        type="text"
+                        value="" 
+                        class="text-gray leading-tight">      
                 </div>
 
                 <div class="text-gray-600 flex">
                     <label for="web" class="font-bold mr-2"><i class="fas fa-columns"></i> Web:</label>
-                    <input id='web' placeholder="Your webpage" type="text" value="" class="text-gray leading-tight">      
+                    <input v-model="form.web"
+                        id='web'
+                        placeholder="Your webpage"
+                        type="text"
+                        value=""
+                        class="text-gray leading-tight">      
                 </div>  
             </div>
         </div>
     </div>
     <hr class="border-gray-800">
-</div>  </div>
+</div>  
+</div>
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+            form : {
+                bio : '',
+                public_email : '',
+                city : '',
+                web : ''
+            }
+        }
+    },
+    methods:{
+        saveDetails(){
+            alert('saving details ... 💫💫');
+        }
+    },
     computed: {
         currentUser() {
             return this.$store.getters.currentUser;
-        }
+        },
     }
 }
 </script>

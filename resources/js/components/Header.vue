@@ -24,6 +24,8 @@
                 </template>
                 <template v-else>
                     <router-link data-v-step="2" to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Adverts</router-link>
+                    <router-link to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-bell fa-lg"></i></router-link>
+                    <router-link to="/adverts" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="far fa-comment fa-lg"></i></router-link>
                     <span class="py-2 px-3 cursor-pointer hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
                     <transition name="slide">
                         <div v-show="menuOpen" class="dropdown-menu z-30" aria-labelledby="navbarDropdown">
@@ -34,18 +36,18 @@
                                 </div>
                                 {{currentUser.username}}
                             </router-link> 
+                            <router-link to="/settings" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Settings
+                            </router-link> 
+                            <router-link to="/report" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Reports
+                            </router-link> 
+                            <router-link to="/privacy-policy" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                Privacy Policy
+                            </router-link>
                             <a @click="menuOpen = false"  href="#!" @click.prevent="logout" class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
-                             <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Settings
-                            </router-link> 
-                            <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Reports
-                            </router-link> 
-                            <router-link to="/profile" class="inline flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
-                                Privacy Policy
-                            </router-link> 
                             </div>
                         </div>
                     </transition>
