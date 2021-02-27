@@ -64,16 +64,22 @@
             </div>
         </div>
     </div>
-</div>  </div>
+</div>  
+<Advert/>
+</div>
 </template>
 
 <script>
+import Advert from '../adverts/Advert'
 export default {
-  computed: {
-    currentUser() {
-      return this.$store.getters.currentUser;
+    components:{
+        Advert
+    },
+    computed: {
+        currentUser() {
+            return this.$store.getters.currentUser;
+        }
     }
-  }
 }
 </script>
 

@@ -12,6 +12,7 @@
     <div class="flex-initial">
         <div class="flex justify-end items-center relative">
             <div class="flex md:mr-2 items-center">
+                <span @click="changeMode" class="dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-lightbulb fa-lg"></i></span>
                 <template v-if="!currentUser">
                     <router-link to="/login" class="dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-sign-in-alt"></i></router-link>
                     <router-link to="/registrate" class="dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Register</router-link>
@@ -66,9 +67,19 @@
                 let el = this.$refs.dropdownMenu
                 let target = e.target
                 if ((el !== target) && !el.contains(target)  || target.tagName == 'NAV' || target.tagName == 'A') {
-                    this.menuOpen=false
+                    this.menuOpen=false;
                 }
-            }
+            },
+            changeMode(){
+                let htmlClasses = document.querySelector('html').classList;
+                if(localStorage.theme == 'dark') {
+                    htmlClasses.remove('dark');
+                    localStorage.removeItem('theme')
+                } else {
+                    htmlClasses.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            } 
         },
         data(){
             return{

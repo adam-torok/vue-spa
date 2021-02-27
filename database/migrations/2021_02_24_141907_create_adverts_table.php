@@ -15,6 +15,18 @@ class CreateAdvertsTable extends Migration
     {
         Schema::create('adverts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->string('description');
+            $table->string('city');
+            $table->string('county');
+            $table->string('image');
+            $table->string('console_type');
+            $table->string('advert_type');
+            $table->string('price');
+            $table->boolean('shippig');
+            $table->string('condition');
+            $table->boolean('shelfed')->default(false);
             $table->timestamps();
         });
     }
