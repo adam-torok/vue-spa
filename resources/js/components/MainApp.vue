@@ -1,11 +1,11 @@
 <template>
-    <div id="main" class=" border-t-4 border-gray-800">
+    <div id="main" class="dark:bg-gray-900 bg-white border-t-4 border-gray-800">
     <Header/>
     
         <transition name='fade' mode="out-in" >
-            <div v-if="alert.message" class="notifier inline-flex items-center bg-white leading-none text-gray-600 rounded-full p-2 shadow text-teal text-sm">
-                <span class="inline-flex bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
-                <span class="inline-flex px-2">{{alert.message}}</span>
+            <div v-if="alert.message" class="notifier inline-flex items-center leading-none dark:text-white text-gray-600 rounded-full p-2 shadow text-teal text-sm">
+                <span class="inline-flex dark:text-white bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
+                <span class="inline-flex dark:text-white px-2">{{alert.message}}</span>
             </div>        
         </transition>
 
@@ -60,7 +60,6 @@ textarea {
     font-size: 16px;
 }
 #main{
-    background: rgb(215, 215, 215);
     min-height: 100vh;
 }
 .notifier{

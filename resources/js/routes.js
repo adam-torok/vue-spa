@@ -1,12 +1,15 @@
-import Home from './components/pages/home/Home'
-import Profile from './components/pages/profile/index'
-import ProfileEdit from './components/pages/profile/edit'
-import Settings from './components/pages/settings/Settings'
-import Report from './components/pages/report/report'
-import PP from './components/pages/privacy/pp'
-import Adverts from './components/pages/adverts/Adverts'
-import Login from './components/auth/Login'
-import Registrate from './components/auth/Registrate'
+import Home from './pages/home/Home'
+import showProfile from './pages/profile/show'
+import Profile from './pages/profile/index'
+import ProfileEdit from './pages/profile/edit'
+import Settings from './pages/settings/Settings'
+import Report from './pages/report/report'
+import PP from './pages/privacy/pp'
+import Adverts from './pages/adverts/Adverts'
+import SingleAdvert from './pages/adverts/SingleAdvert'
+import AdvertCreate from './pages/adverts/NewAdvert'
+import Login from './pages/auth/Login'
+import Registrate from './pages/auth/Registrate'
 
 export const routes = [
    {
@@ -39,10 +42,31 @@ export const routes = [
       }
    },
    {
+      path : '/profile/1',
+      component : showProfile,
+      meta : {
+         requiresAuth : true,
+      }
+   },
+   {
       path : '/adverts',
       component : Adverts,
       meta : {
          requiresAuth : true,
+      }
+   },
+   {
+      path : '/advert/create',
+      component : AdvertCreate,
+      meta : {
+         requiresAuth : true,
+      }
+   },
+   {
+      path : '/advert/1',
+      component : SingleAdvert,
+      meta : {
+         requiresAuth : false,
       }
    },
    {
