@@ -1,6 +1,6 @@
 <template>
     <div id="main" class="dark:bg-gray-900 bg-white border-t-4 border-gray-800">
-    <Header/>
+    <Header @showLogoutModal="showLogoutModal"/>
     
         <transition name='fade' mode="out-in" >
             <div v-if="alert.message" class="notifier inline-flex items-center leading-none dark:text-white text-gray-600 rounded-full p-2 shadow text-teal text-sm">
@@ -12,17 +12,28 @@
         <transition name='fade' mode="out-in" >
             <router-view></router-view>
         </transition>
-
+ 
+    <transition name='fade' mode="out-in" >
+        <LogoutModal @hideModal="hideModal" v-if="showLogout"/>
+    </transition>
+    
     </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 import Header from './Header'
+import LogoutModal from './LogoutModal'
 
     export default {
         components:{
             Header,
+            LogoutModal
+        },
+        data(){
+            return{
+                showLogout : false
+            }
         },
         computed: {
             ...mapState({
@@ -32,9 +43,16 @@ import Header from './Header'
         methods: {
             ...mapActions({
                 clearAlert: 'alert/clear' 
-            })
+            }),
+            showLogoutModal(){
+                this.showLogout = true;
+            },
+            hideModal(){
+                this.showLogout = false;
+            }
         },
         mounted(){
+            tippy('[data-tippy-content]');
             if (localStorage.theme === 'dark' ||
                 (!'theme' in localStorage &&
                 window.matchMedia('(prefers-color-scheme: dark)').matches)) {

@@ -3,7 +3,7 @@
     mode="out-in"
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut">
-    <div class="loading bg-white bg-opacity-50 dark:bg-black absolute z-50 h-screen w-full flex flex-col items-center justify-center">
+    <div class="loading bg-white bg-opacity-50 dark:bg-opacity-50 dark:bg-black absolute z-50 h-screen w-full flex flex-col items-center justify-center">
       <i class="fas text-gray-900 dark:text-gray-200 fa-gamepad fa-spin fa-3x"></i>
     </div>
   </transition>

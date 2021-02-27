@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdvertController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrateController;
@@ -13,3 +14,4 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('me', [AuthController::class, 'me']);
 });
 Route::post('profile/update',[ProfileController::class, 'update']);
+Route::post('advert/store',[AdvertController::class, 'store']);

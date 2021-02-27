@@ -66,8 +66,8 @@
                         })
                     })
                 },
-        },
-    }
+            },
+        }
 </script>
 
 <style scoped>

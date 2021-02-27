@@ -55,7 +55,7 @@
                     <span class="flex mr-2" v-if="currentUser.webpage"><i class="fas fa-columns"></i>
                         <a href="" class="leading-5 ml-1 text-blue-400">{{currentUser.webpage}}</a>
                     </span>
-                    <span class="flex mr-2"><span class="leading-5 ml-1">Joined {{currentUser.created_at}}</span></span>
+                    <span class="flex mr-2"><span class="leading-5 ml-1"><i class="far fa-calendar-alt"></i> Joined {{currentUser.created_at}}</span></span>
                 </div>
             </div>
             <div class="pt-3 flex justify-start items-start">

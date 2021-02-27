@@ -24,7 +24,7 @@ class CreateAdvertsTable extends Migration
             $table->string('console_type');
             $table->string('advert_type');
             $table->string('price');
-            $table->boolean('shippig');
+            $table->tinyInteger('shipping');
             $table->string('condition');
             $table->boolean('shelfed')->default(false);
             $table->timestamps();

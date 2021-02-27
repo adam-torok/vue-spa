@@ -44,8 +44,8 @@
                   <label for="shipping" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Shipping?</label>
                      <select required v-model="form.shipping" name="console_type" id="console_type" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
                         <option disabled selected value="">Will ship it?</option>
-                        <option selected value="true">Yes</option>
-                        <option value="false">No</option>
+                        <option selected value="1">Yes</option>
+                        <option value="2">No</option>
                      </select>               
                </span>
                <span class="w-1/2">
@@ -87,11 +87,11 @@ export default {
             city : '',
             price : '',
             county : '', 
+            image : 'base_profile.jpg',
             advert_type : 'sell',
             console_type : '', // Type of console (xbox,ps,nintendo)
             shipping : '', // Can be shipped to customer
             condition : '', // Meaning the state of the game (used/new)
-            image : '' // Will be the URL of the game
          }
       }
    },
@@ -103,11 +103,19 @@ export default {
    methods: {
       createNewAdvert(){
          this.isLoading = true;
-         setTimeout(() => {
-            this.isLoading = false;
-            //alert('advert created...');
-            console.log(this.form);
-         }, 3000);
+         axios.post('/api/advert/store', this.form)
+         .then(() => {
+            this.$router.push({ path: '/adverts' })
+            setTimeout(() => {
+                  this.$store.dispatch('alert/success', 'Advert successful');
+                  this.isLoading = false;
+            },1000)
+         })
+            .catch((err) =>{
+               setTimeout(() => {
+                  this.$store.dispatch('alert/error', err);
+            })
+         })
       }
    },
    mounted(){

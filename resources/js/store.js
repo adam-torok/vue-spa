@@ -63,11 +63,5 @@ export default {
         login(context) {
             context.commit("login");
         },
-        getAdverts(context) {
-            axios.get('/api/adverts')
-            .then((response) => {
-                context.commit('updateAdverts', response.data.adverst);
-            })
-        }
     }
 };

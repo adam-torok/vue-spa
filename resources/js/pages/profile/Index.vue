@@ -55,17 +55,25 @@
                     <span class="flex mr-2" v-if="currentUser.webpage"><i class="fas fa-columns"></i>
                         <a href="" class="leading-5 ml-1 text-blue-400">{{currentUser.webpage}}</a>
                     </span>
-                    <span class="flex mr-2"><span class="leading-5 ml-1">Joined {{currentUser.created_at}}</span></span>
+                    <span class="flex mr-2"><span class="leading-5 ml-1"><i class="far fa-calendar-alt"></i> Joined {{currentUser.created_at}}</span></span>
                 </div>
             </div>
             <div class="pt-3 flex justify-start items-start">
-                <span class="font-bold text-gray dark:text-white">24</span><span class="text-gray-600"> Current Adverts</span>
-                <span class="font-bold text-gray dark:text-white mr-2">6</span><span class="text-gray-600"> Sucessfull Trades</span>
+                <span class="font-bold text-gray dark:text-white">
+                    <i class="fas fa-check-circle"></i> 24
+                </span>
+                <span class="text-gray-600"> Current Adverts</span>
+                <span class="font-bold text-gray dark:text-white">
+                    <i class="fas fa-check-circle"></i> 6
+                </span>
+                <span class="text-gray-600"> Sucessfull Trades</span>
             </div>
         </div>
     </div>
 </div>  
-<Advert/>
+<div class="hirdetesek onegrid">
+    <Advert/>
+</div>
 </div>
 </template>
 
