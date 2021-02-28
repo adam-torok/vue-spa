@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import storeData from './store'
 import { alert } from './store/alert.module';
+import { advert } from './store/advert';
 import Notifications from "vt-notifications";
 import { routes } from './routes';
 import MainApp from './components/MainApp'
@@ -27,6 +28,7 @@ const store = new Vuex.Store({
     modules: {
         storeData,
         alert,
+        advert,
     }
 });
 

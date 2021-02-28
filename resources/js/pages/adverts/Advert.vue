@@ -16,7 +16,7 @@
       </div>
       <div class="flex items-center justify-between px-4 py-2 overflow-hidden">
         <span class="text-xs font-medium text-blue-600 uppercase dark:text-white">
-          For trade
+          {{advert.title}}
         </span>
         <div class="flex flex-row items-center">
           <div
@@ -91,17 +91,14 @@
       >
         <a href="#">
           <h2 class="text-2xl font-bold tracking-normal dark:text-white text-gray-800">
-            For trade...
+           {{advert.title}}
           </h2>
         </a>
       </div>
       <p
         class="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify dark:text-gray-400 text-gray-700"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni
-        fugiat, odit incidunt necessitatibus aut nesciunt exercitationem aliquam
-        id voluptatibus quisquam maiores officia sit amet accusantium aliquid
-        quo obcaecati quasi.
+        {{advert.description}}
       </p>
       <hr class="border-gray-300 dark:border-gray-500" />
       <section class="px-4 py-2 mt-2">
@@ -116,7 +113,7 @@
             <router-link exact to="profile/1" class="font-semibold dark:text-gray-400 text-gray-700 hover:underline">
                 John Doe
             </router-link>
-              <span class="mx-1 text-xs dark:text-gray-400 text-gray-600">28 Sep 2020</span>
+              <span class="mx-1 text-xs dark:text-gray-400 text-gray-600">{{advert.created_at}}</span>
             </div>
           </div>
             <router-link to="advert/1" type="submit" class="dark:bg-gray-white transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white p-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
@@ -131,7 +128,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    advert : Object
+  }
+};
 </script>
 
 <style>

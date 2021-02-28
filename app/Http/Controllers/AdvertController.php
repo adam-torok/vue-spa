@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Advert;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class AdvertController extends Controller
 {
     public function store()
@@ -40,5 +42,9 @@ class AdvertController extends Controller
         }else{
             return response('Something went wrong!');
         }
+    }
+
+    public function index(){
+        return Advert::all();
     }
 }

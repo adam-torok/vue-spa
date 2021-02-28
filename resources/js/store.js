@@ -2,6 +2,7 @@ import { getLocalUser } from "./helpers/auth";
 
 const user = getLocalUser();
 
+
 export default {
     state: {
         currentUser: user,

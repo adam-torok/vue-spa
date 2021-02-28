@@ -15,3 +15,4 @@ Route::group(['prefix' => 'auth'], function () {
 });
 Route::post('profile/update',[ProfileController::class, 'update']);
 Route::post('advert/store',[AdvertController::class, 'store']);
+Route::get('advert/index',[AdvertController::class, 'index']);

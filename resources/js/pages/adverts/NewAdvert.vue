@@ -1,35 +1,35 @@
 <template>
   <div class="grid min-h-screen place-items-center">
-      <div class="w-11/12 p-12 dark:bg-gray-800 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+      <div class="w-11/12 p-12 dark:bg-gray-700 bg-gray-100 sm:w-8/12 md:w-1/2 mb-2 lg:w-5/12">
          <h1 class="text-xl font-semibold dark:text-gray-200 ">To create a new advert, <span class="font-normal">please fill in your information.</span></h1>
          <form @submit.prevent='createNewAdvert' class="mt-6">
             <label for="title" class="block mt-2 text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Title</label>
             <input required v-model="form.title" id="title" type="text" name="title" placeholder="Your advert's title" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"/>
             <label for="description" class="block mt-2 text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Description</label>
-            <textarea required v-model="form.description" id="description" type="text" name="description" placeholder="Describe what you're selling" class="block w-full mb-2 p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
+            <textarea required v-model="form.description" id="description" type="text" name="description" placeholder="Describe what you're selling" class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
             
-            <div class="flex justify-between gap-3">
+            <div class="block md:flex justify-between gap-3">
 
                <span class="w-1/2 mb-2">
-                  <label for="county" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">County</label>
-                  <input required v-model="form.county" id="county" type="text" name="county" placeholder="Your County" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
+                  <label for="county" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">County</label>
+                  <input required v-model="form.county" id="county" type="text" name="county" placeholder="Your County" class=" mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
                </span>
-               <span class="w-1/2">
-                  <label for="city" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">City</label>
-               <input required v-model="form.city" id="city" type="text" name="city" placeholder="Your City" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
+               <span class="w-1/2 mb-2">
+                  <label for="city" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">City</label>
+               <input required v-model="form.city" id="city" type="text" name="city" placeholder="Your City" class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
                </span>
 
             </div>
 
-             <div class="flex justify-between gap-3 mb-2">
+             <div class="block md:flex justify-between gap-3 mb-2">
 
-               <span class="w-1/2">
-                  <label for="price" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Price (Ft)</label>
-                  <input required v-model="form.price" id="price" type="number" name="price" placeholder="Price..." class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
+               <span class="w-1/2 mb-2">
+                  <label for="price" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Price (Ft)</label>
+                  <input required v-model="form.price" id="price" type="number" name="price" placeholder="Price..." class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
                </span>
-               <span class="w-1/2">
-                  <label for="console_type" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Console type</label>
-                  <select required v-model="form.console_type" name="console_type" id="console_type" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+               <span class="w-1/2 mb-2">
+                  <label for="console_type" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Console type</label>
+                  <select required v-model="form.console_type" name="console_type" id="console_type" class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
                      <option disabled selected value="">Console type</option>
                      <option selected value="xbox">Xbox</option>
                      <option value="playstation">Playstation</option>
@@ -39,18 +39,18 @@
 
             </div>
 
-            <div class="flex justify-between gap-3 mb-2">
-               <span class="w-1/2">
-                  <label for="shipping" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Shipping?</label>
-                     <select required v-model="form.shipping" name="console_type" id="console_type" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+            <div class="block md:flex justify-between gap-3 mb-2">
+               <span class="w-1/2 mb-2">
+                  <label for="shipping" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Shipping?</label>
+                     <select required v-model="form.shipping" name="console_type" id="console_type" class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
                         <option disabled selected value="">Will ship it?</option>
                         <option selected value="1">Yes</option>
                         <option value="2">No</option>
                      </select>               
                </span>
-               <span class="w-1/2">
-                  <label for="condition" class="block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Condition</label>
-                  <select  required v-model="form.condition" name="condition" id="condition" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
+               <span class="w-1/2 mb-2">
+                  <label for="condition" class="mb-2 block text-xs font-semibold text-gray-600 dark:text-gray-200 uppercase">Condition</label>
+                  <select  required v-model="form.condition" name="condition" id="condition" class="mb-2 block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner">
                      <option disabled selected value="">Select the condition</option>
                      <option selected value="used">Used</option>
                      <option value="new">New</option>
@@ -60,7 +60,7 @@
             </div>
 
            
-            <button  type="submit" class="transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+            <button type="submit" class="transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                 <span class="inline-block mr-2">Create it ! 🤘🏼
                     <i v-show="isLoading" class="fas fa-spinner fa-spin"></i>
                 </span>

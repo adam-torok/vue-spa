@@ -6,16 +6,7 @@
         
         <transition name='fade' mode="out-in" >
         <div class="hirdetesek" :class="{onegrid: oneGrid}">
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
-            <Advert/>
+                <Advert :advert="advert" v-for="advert in adverts" :key="advert.id"/>
         </div>
         </transition>
         <Navigation/>
@@ -26,6 +17,7 @@
 import Loader from './Loader'
 import Navigation from './Navigation'
 import Advert from './Advert'
+import { mapState, mapActions } from 'vuex';
 
 export default {
     components:{
@@ -37,18 +29,25 @@ export default {
         return{
             showLoader : true,
             oneGrid : false,
-            adverts : []
         }
     },
     methods : {
+        ...mapActions({
+            fetchAdvert: 'advert/fetchAdverts' 
+        }),
         changeView(){
             this.oneGrid = !this.oneGrid;
         }
     },
+    computed :{
+        ...mapState({
+            adverts: state => state.advert.adverts,
+        }),
+    },
     mounted(){
-        setTimeout(() => {
+        this.fetchAdvert().then(() => {
             this.showLoader = false;
-        }, 1000);
+        });
     }
 }
 </script>
