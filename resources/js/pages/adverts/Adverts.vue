@@ -1,12 +1,10 @@
 <template>
     <div class="con dark:bg-gray-900 flex h-full content-center justify-center align-center">
         <Loader v-if="showLoader"/>
-
         <button @click="changeView" class="fixed gridder left-4 bg-opacity-50 rounded-full bg-gray-800 p-4 text-white"><i class="fas fa-th"></i></button>
-        
         <transition name='fade' mode="out-in" >
         <div class="hirdetesek" :class="{onegrid: oneGrid}">
-                <Advert :advert="advert" v-for="advert in adverts" :key="advert.id"/>
+            <Advert :advert="advert" v-for="advert in adverts" :key="advert.id"/>
         </div>
         </transition>
         <Navigation/>

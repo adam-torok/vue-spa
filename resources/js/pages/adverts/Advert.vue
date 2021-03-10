@@ -116,7 +116,7 @@
               <span class="mx-1 text-xs dark:text-gray-400 text-gray-600">{{advert.created_at}}</span>
             </div>
           </div>
-            <router-link to="advert/1" type="submit" class="dark:bg-gray-white transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white p-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+            <router-link :to="{name: 'advert', params: {id: advert.id}}" class="dark:bg-gray-white transition duration-200 bg-gray-500 hover:bg-gray-600 focus:bg-gray-700 focus:shadow-sm focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50 text-white p-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                 <span class="inline-block">Check</span>
             </router-link>
         </div>
@@ -131,7 +131,7 @@
 export default {
   props:{
     advert : Object
-  }
+  },
 };
 </script>
 

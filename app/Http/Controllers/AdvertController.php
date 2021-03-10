@@ -47,4 +47,13 @@ class AdvertController extends Controller
     public function index(){
         return Advert::all();
     }
+
+    public function show($id)
+    {
+       $advert = Advert::findOrFail($id);
+
+       if($advert){
+           return response($advert);
+       }
+    }
 }

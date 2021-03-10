@@ -1,6 +1,6 @@
 <template>
    <!-- Card Component -->
-<div class="max-w-md mx-auto">
+<div class="max-w-md mx-auto" v-if="advert">
   <div
     class="transition-all duration-150 flex w-full px-4 py-3"
   >
@@ -16,7 +16,6 @@
       </div>
       <div class="flex items-center justify-between px-4 py-2 overflow-hidden">
         <span class="text-xs font-medium text-blue-600 uppercase dark:text-white">
-         Title
         </span>
         <div class="flex flex-row items-center">
           <div
@@ -91,17 +90,14 @@
       >
         <a href="#">
           <h2 class="text-2xl font-bold tracking-normal dark:text-white text-gray-800">
-            For trade...
+            {{advert.title}}
           </h2>
         </a>
       </div>
       <p
         class="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify dark:text-gray-400 text-gray-700"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni
-        fugiat, odit incidunt necessitatibus aut nesciunt exercitationem aliquam
-        id voluptatibus quisquam maiores officia sit amet accusantium aliquid
-        quo obcaecati quasi.
+        {{advert.description}}
       </p>
       <hr class="border-gray-300 dark:border-gray-500" />
       <section class="px-4 py-2 mt-2">
@@ -114,7 +110,7 @@
             />
             <div class="flex flex-col mx-2">
             <router-link exact to="profile/1" class="font-semibold dark:text-gray-400 text-gray-700 hover:underline">
-                John Doe
+               
             </router-link>
               <span class="mx-1 text-xs dark:text-gray-400 text-gray-600">28 Sep 2020</span>
             </div>
@@ -137,8 +133,24 @@
 </template>
 
 <script>
-export default {
+import { mapActions , mapState} from "vuex";
 
+export default {
+  props: ["id"],
+
+  methods:{
+    ...mapActions({
+        fetchAdvert : 'advert/fetchAdvert'
+    }),
+  },
+ computed: {
+    advert () {
+      return this.$store.state.advert.advert
+    }
+  },
+  mounted() {
+    this.fetchAdvert(this.id);
+  },
 }
 </script>
 

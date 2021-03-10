@@ -63,8 +63,10 @@ export const routes = [
       }
    },
    {
-      path : '/advert/1',
+      path : '/advert/:id',
+      name : 'advert',
       component : SingleAdvert,
+      props: true,
       meta : {
          requiresAuth : false,
       }
