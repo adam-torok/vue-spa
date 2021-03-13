@@ -15,7 +15,7 @@ class Advert extends Model
         'description',
         'city',
         'county',
-        'image',
+        'image_name',
         'console_type',
         'advert_type',
         'price',

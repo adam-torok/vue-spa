@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="pt-3 flex justify-start items-start">
-                <span class="font-bold text-gray">24</span><span class="text-gray-600"> Current Adverts</span>
+                <span class="font-bold text-gray">10</span><span class="text-gray-600"> Current Adverts</span>
                 <span class="font-bold text-gray mr-2">6</span><span class="text-gray-600"> Sucessfull Trades</span>
             </div>
         </div>

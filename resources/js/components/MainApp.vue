@@ -3,9 +3,9 @@
     <Header @showLogoutModal="showLogoutModal"/>
     
         <transition name='fade' mode="out-in" >
-            <div v-if="alert.message" class="notifier inline-flex items-center leading-none dark:text-white text-gray-600 rounded-full p-2 shadow text-teal text-sm">
-                <span class="inline-flex dark:text-white bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
-                <span class="inline-flex dark:text-white px-2">{{alert.message}}</span>
+            <div v-if="alert.message" class="notifier dark:bg-white bg-gray-900 inline-flex items-center leading-none dark:text-white text-gray-600 rounded-full p-2 shadow text-teal text-sm">
+                <span class="inline-flex dark:text-gray-800 bg-gray-600 text-white rounded-full h-6 px-3 justify-center items-center"></span>
+                <span class="inline-flex dark:text-gray-800 text-white px-2">{{alert.message}}</span>
             </div>        
         </transition>
 
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import Header from './Header'
 import LogoutModal from './LogoutModal'
 

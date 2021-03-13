@@ -1,12 +1,9 @@
 <template>
-   <div
-      class="p-4 mt-4 pt-0 flex items-center justify-center bg-cover bg-center"
-   >
+   <div class="login__container p-4 mt-4 pt-0 flex items-center justify-center bg-cover bg-center">
       <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
-         <div
-            class="bg-white dark:bg-gray-800 shadow w-full rounded-lg divide-y divide-gray-200"
-         >
-            <div class="px-5 py-7">
+         <div class="bg-white dark:bg-gray-800 shadow-lg w-full rounded-lg divide-y divide-gray-200">
+        
+           <div class="px-5 py-7">
                <form @submit.prevent="authenticate">
                   <label
                      class="font-semibold text-sm dark:text-gray-200 text-gray-600 pb-1 block"
@@ -15,6 +12,7 @@
                   <input
                      required
                      v-model="form.email"
+                     placeholder="Enter your email address"
                      type="email"
                      class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
                   />
@@ -25,6 +23,7 @@
                   <input
                      required
                      type="text"
+                     placeholder="Enter your password"
                      v-model="form.password"
                      class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
                   />
@@ -58,31 +57,6 @@
                </form>
             </div>
          </div>
-         <div class="py-5">
-            <div class="grid grid-cols-2 gap-1">
-               <div class="text-center sm:text-left whitespace-nowrap">
-                  <button
-                     class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-200 focus:outline-none focus:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset"
-                  >
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        class="w-4 h-4 inline-block align-text-top"
-                     >
-                        <path
-                           stroke-linecap="round"
-                           stroke-linejoin="round"
-                           stroke-width="2"
-                           d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                        />
-                     </svg>
-                     <span class="inline-block ml-1">Back to home</span>
-                  </button>
-               </div>
-            </div>
-         </div>
       </div>
    </div>
 </template>
@@ -114,7 +88,7 @@ export default {
             this.$store.dispatch('login',this.$data.form)
                .then((res) => {
                   this.$store.commit("LOGIN_SUCCESS", res);
-                  this.$router.push({ path: "/" });
+                  this.$router.push({ path: "/adverts" });
                })
                .catch((error) => {
                   setTimeout(() => {
@@ -136,6 +110,13 @@ export default {
 }
 .alerter {
    transition: all 0.3s;
+}
+.login__container{
+   background: url('https://i.pinimg.com/originals/0b/1f/85/0b1f8517c066dd89ff8022c31bf23621.jpg');
+   background-size: cover;
+   background-position: center;
+   height: calc(100vh - 90px);
+   backdrop-filter: blur(10px);
 }
 </style>
 

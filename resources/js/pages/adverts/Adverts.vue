@@ -1,27 +1,32 @@
 <template>
-    <div class="con dark:bg-gray-900 flex h-full content-center justify-center align-center">
-        <Loader v-if="showLoader"/>
-        <button @click="changeView" class="fixed gridder left-4 bg-opacity-50 rounded-full bg-gray-800 p-4 text-white"><i class="fas fa-th"></i></button>
-        <transition name='fade' mode="out-in" >
-        <div class="hirdetesek" :class="{onegrid: oneGrid}">
-            <Advert :advert="advert" v-for="advert in adverts" :key="advert.id"/>
+    <div>
+        <SearchBar/>
+        <div class="con dark:bg-gray-900 flex h-full content-center justify-center align-center">
+            <Loader v-if="showLoader"/>
+            <button @click="changeView" class="fixed gridder left-4 bg-opacity-50 rounded-full bg-gray-800 p-4 text-white"><i class="fas fa-th"></i></button>
+            <transition name='fade' mode="out-in" >
+                <div class="hirdetesek" :class="{onegrid: oneGrid}">
+                    <Advert :advert="advert" v-for="advert in adverts" :key="advert.id"/>
+                </div>
+            </transition>
+            <Navigation/>
         </div>
-        </transition>
-        <Navigation/>
-    </div>
+    </div> 
 </template>
 
 <script>
 import Loader from './Loader'
+import SearchBar from '../../components/SearchBar'
 import Navigation from './Navigation'
 import Advert from './Advert'
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
     components:{
         Loader,
         Navigation,
-        Advert
+        Advert,
+        SearchBar
     },
     data(){
         return{
@@ -30,14 +35,23 @@ export default {
         }
     },
     methods : {
-        ...mapActions({
-            fetchAdvert: 'advert/fetchAdverts' 
-        }),
         changeView(){
             this.oneGrid = !this.oneGrid;
+            this.$store.state.advert.adverts.filtered = this.isShipping;
+            console.log(this.$store.state.advert.adverts.filtered );
+            this.$store.commit('advert/SET_ADVERTS', this.isShipping);
+        },
+        fetchAdvert(){
+            return axios.get('api/advert/index').then(response => {
+                this.$store.commit('advert/SET_ADVERTS', response.data);
+            });
         }
     },
     computed :{
+        ...mapGetters({
+            isShipping: 'advert/isShipping'
+            // map `this.doneCount` to `this.$store.getters.doneTodosCount`
+        }),
         ...mapState({
             adverts: state => state.advert.adverts,
         }),

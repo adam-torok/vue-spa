@@ -29,8 +29,8 @@ class CreateUsersTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('skype')->nullable();
 
-            $table->string('profile_picture')->nullable()->default('base_profile');
-            $table->string('profile_cover')->nullable()->default('base_cover');
+            $table->string('profile_picture')->nullable()->default('/uploads/images/profile_images/base_profile.jpg');
+            $table->string('profile_cover')->nullable()->default('/uploads/images/profile_images/base_cover.jpg');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

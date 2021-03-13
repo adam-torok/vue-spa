@@ -17,49 +17,60 @@
                 <span 
                     @click="changeMode" 
                     data-tippy-content="Toggle darkmode"
-                    class="cursor-pointer dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                    class="cursor-pointer dark:text-white text-gray-900 dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">
                     <i class="fas fa-lightbulb fa-lg"></i>
                 </span>
                 <template v-if="!currentUser">
+                    <router-link
+                        data-v-step="2"
+                        to="/adverts"
+                        data-tippy-content="Adverts"
+                        class="inline-block text-gray-900 dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                        <i class="fas fa-newspaper fa-lg"></i>
+                    </router-link>
                     <router-link 
                         to="/login"
                         data-tippy-content="Login"
-                        class="dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-sign-in-alt"></i>
+                        class="dark:text-white text-gray-900 dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative"><i class="fas fa-sign-in-alt"></i>
                     </router-link>
                     <router-link
                         to="/registrate"
                         data-tippy-content="Register"
-                        class="dark:text-white dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Register</router-link>
+                        class="dark:text-white text-gray-900 dark:hover:text-black inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative">Register
+                    </router-link>
+                    
                 </template>
                 <template v-else>
                     <router-link
                         data-v-step="2"
                         to="/adverts"
                         data-tippy-content="Adverts"
-                        class="inline-block dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                        class="inline-block text-gray-900 dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
                         <i class="fas fa-newspaper fa-lg"></i>
                     </router-link>
                     <router-link
                         to="/adverts"
                         data-tippy-content="Notifications"
-                        class="inline-block dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                        class="inline-block text-gray-900 dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
                         <i class="fas fa-bell fa-lg"></i>
                     </router-link>
                     <router-link 
                         to="/adverts"
                         data-tippy-content="Messages"
-                        class="inline-block dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                        class="inline-block text-gray-900 dark:text-white dark:hover:text-black py-2 px-3 hover:bg-gray-200 rounded-full relative">
                         <i class="far fa-comment fa-lg"></i>
                     </router-link>
-                    <span class="py-2 px-3 cursor-pointer dark:text-white dark:hover:text-black hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
+                    <span class="py-2 px-3 cursor-pointer text-gray-900 dark:text-white dark:hover:text-black hover:bg-gray-200 rounded-full" @click="menuOpen =! menuOpen" ><i class="cursor-pointer fas fa-chevron-circle-down fa-lg" v-bind:class="{ 'rotated': menuOpen }"></i> More</span>
                     <transition name="slide">
                         <div v-show="menuOpen" class="dropdown-menu z-30" aria-labelledby="navbarDropdown">
                             <div @click="menuOpen = !menuOpen" class="dropdpown__inner dark:bg-gray-900">
                                 <router-link 
                                     to="/profile" 
-                                    class="inline dark:text-white dark:hover:text-black flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
+                                    class="dark:text-white dark:hover:text-black flex justify-center items-center py-2 px-3 hover:bg-gray-200 rounded-full relative">
                                     <div class="flex relative w-7 h-7 justify-center items-center mr-2 text-xl rounded-full text-white">
-                                        <img class="rounded-full w-full h-full object-cover" alt="Profile picture" :src="'../img/'+currentUser.profile_picture+'.jpg'"> 
+                                        <img class="rounded-full w-full h-full object-cover"
+                                        alt="Profile picture"
+                                        :src="'../storage/'+currentUser.profile_picture"> 
                                     </div>
                                     {{currentUser.username}}
                                 </router-link> 
@@ -101,7 +112,6 @@
         name: 'app-header',
         methods: {
             showLogout() {
-               
                 this.$emit('showLogoutModal')
             },
              documentClick(e){
@@ -142,6 +152,9 @@
 </script>
 
 <style scoped>
+.naver{
+    z-index: 9;
+}
     .dropdown-menu{
         background: white;
         position: absolute;

@@ -16,16 +16,22 @@ export const routes = [
       path : '/',
       component : Home,
       meta : {
-         requiresAuth : true,
+         requiresAuth : false,
       }
    },
    {
       path : '/registrate',
       component : Registrate,
+      meta : {
+         requiresAuth : false,
+      }
    },
    {
       path : '/login',
       component : Login,
+      meta : {
+         requiresAuth : false,
+      }
    },
    {
       path : '/profile/',
@@ -52,7 +58,7 @@ export const routes = [
       path : '/adverts',
       component : Adverts,
       meta : {
-         requiresAuth : true,
+         requiresAuth : false,
       }
    },
    {

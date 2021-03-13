@@ -20,7 +20,7 @@ class CreateAdvertsTable extends Migration
             $table->string('description');
             $table->string('city');
             $table->string('county');
-            $table->string('image');
+            $table->string('image_name');
             $table->string('console_type');
             $table->string('advert_type');
             $table->string('price');

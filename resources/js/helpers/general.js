@@ -13,10 +13,9 @@ export function initialize(store, router) {
     
     axios.interceptors.response.use(null, (error) => {
         if (error.response.status == 401) {
-            store.commit('logout');
+            store.commit('LOGOUT');
             router.push('/login');
         }
-
         return Promise.reject(error);
     });
 
@@ -27,4 +26,10 @@ export function initialize(store, router) {
 
 export function setAuthorization(token) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+}
+
+export function getByKeyword(list, keyword) {
+    const search = keyword.trim().toLowerCase()
+    if (!search.length) return list
+    return list.filter(item => item.title.toLowerCase().indexOf(search) > -1)
 }
